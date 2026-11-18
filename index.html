@@ -380,7 +380,7 @@ footer .wrap{display:flex;flex-direction:column;align-items:flex-start;gap:8px;p
       <div class="label"><i>06.</i> Contact</div>
       <div class="contact">
         <div class="lines">
-          <div><span class="tc">Email</span><div class="v"><a href="mailto:info@verbeditorial.com">info@verbeditorial.com</a></div></div>
+          <div><span class="tc">Email</span><div class="v"><a href="mailto:hello@verbeditorial.com">hello@verbeditorial.com</a></div></div>
           <div><span class="tc">Phone</span><div class="v">805-372-1570</div></div>
           <div><span class="tc">Elsewhere</span><div class="v"><a href="https://www.linkedin.com/in/jeff-brierly-0aa17911" target="_blank" rel="noopener">LinkedIn</a></div></div>
         </div>
@@ -390,7 +390,7 @@ footer .wrap{display:flex;flex-direction:column;align-items:flex-start;gap:8px;p
             <label for="cf-email"><span class="tc">Email</span><input id="cf-email" name="email" type="email" autocomplete="email" required></label>
             <label for="cf-msg"><span class="tc">About the project</span><textarea id="cf-msg" name="message" required></textarea></label>
             <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px"><button type="submit">Send message</button>
-            <p class="note" id="cf-note">Messages go to info@verbeditorial.com.</p>
+            <p class="note" id="cf-note">Messages go to hello@verbeditorial.com.</p>
           </form>
           <p class="ok" id="cf-ok" hidden>Thanks. Your message is on its way, and I'll get back to you shortly.</p>
         </div>
@@ -748,11 +748,11 @@ footer .wrap{display:flex;flex-direction:column;align-items:flex-start;gap:8px;p
     if(!live){note.textContent="Preview only: the form starts sending once the site is live.";return;}
     var btn=form.querySelector("button");btn.disabled=true;note.textContent="Sending…";
     var hp=form.querySelector("[name=_honey]");if(hp&&hp.value){return;}
-    fetch("https://formsubmit.co/ajax/info@verbeditorial.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
+    fetch("https://formsubmit.co/ajax/hello@verbeditorial.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
       body:JSON.stringify({name:document.getElementById("cf-name").value,email:document.getElementById("cf-email").value,message:document.getElementById("cf-msg").value,_subject:"New message from verbeditorial.com",_replyto:document.getElementById("cf-email").value,_template:"table",_captcha:"false"})})
     .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)==="false")throw (j&&j.message)||0;});})
     .then(function(){form.hidden=true;document.getElementById("cf-ok").hidden=false;})
-    .catch(function(m){btn.disabled=false;note.innerHTML='Sorry, that didn\'t go through. Please email <a href="mailto:info@verbeditorial.com">info@verbeditorial.com</a>.';if(m)console.warn("FormSubmit:",m);if(m&&/activat/i.test(m))note.textContent="Almost there: this form is waiting to be activated. Check the info@ inbox for the activation email.";});
+    .catch(function(m){btn.disabled=false;note.innerHTML='Sorry, that didn\'t go through. Please email <a href="mailto:hello@verbeditorial.com">hello@verbeditorial.com</a>.';if(m)console.warn("FormSubmit:",m);if(m&&/activat/i.test(m))note.textContent="Almost there: this form is waiting to be activated. Check the hello@ inbox for the activation email.";});
   });
 })();
 </script>
