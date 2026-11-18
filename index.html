@@ -292,7 +292,7 @@ footer .wrap{display:flex;flex-direction:column;align-items:flex-start;gap:8px;p
         <p>Jeff Brierly · Emmy Award-winning editor. Editorial, motion graphics and design for brands, agencies and documentary teams. Santa Barbara, California &amp; San Miguel de Allende, Mexico, working remotely.</p>
         <blockquote>“Production shouldn't be compartmentalized. The style and story found in the edit should guide the whole post process.”</blockquote>
       </div>
-      <a class="jump" href="#work">Work reel <b>▶</b></a>
+      <a class="jump" href="#work">Work reel <b>&#9654;&#xFE0E;</b></a>
     </div>
   </section>
   </div>
@@ -577,7 +577,7 @@ footer .wrap{display:flex;flex-direction:column;align-items:flex-start;gap:8px;p
   var hud=document.getElementById("hud"), speed=0, hudTimer=null;
   function showHud(){
     hud.hidden=false;
-    hud.innerHTML=speed===0?"<b>■</b> Stopped":(speed>0?"<b>"+"▶".repeat(Math.abs(speed))+"</b> Forward ":"<b>"+"◀".repeat(Math.abs(speed))+"</b> Reverse ")+(speed?Math.pow(2,Math.abs(speed)-1)+"×":"");
+    hud.innerHTML=speed===0?"<b>■</b> Stopped":(speed>0?"<b>"+"\u25B6\uFE0E".repeat(Math.abs(speed))+"</b> Forward ":"<b>"+"\u25C0\uFE0E".repeat(Math.abs(speed))+"</b> Reverse ")+(speed?Math.pow(2,Math.abs(speed)-1)+"×":"");
     clearTimeout(hudTimer);if(speed===0)hudTimer=setTimeout(function(){hud.hidden=true},1200);
   }
   addEventListener("keydown",function(e){
