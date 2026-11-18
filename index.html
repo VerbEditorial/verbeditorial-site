@@ -748,11 +748,11 @@ footer .wrap{display:flex;flex-direction:column;align-items:flex-start;gap:8px;p
     if(!live){note.textContent="Preview only: the form starts sending once the site is live.";return;}
     var btn=form.querySelector("button");btn.disabled=true;note.textContent="Sending…";
     var hp=form.querySelector("[name=_honey]");if(hp&&hp.value){return;}
-    fetch("https://formsubmit.co/ajax/hello@verbeditorial.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
-      body:JSON.stringify({name:document.getElementById("cf-name").value,email:document.getElementById("cf-email").value,message:document.getElementById("cf-msg").value,_subject:"New message from verbeditorial.com",_replyto:document.getElementById("cf-email").value,_template:"table",_captcha:"false"})})
-    .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)==="false")throw (j&&j.message)||0;});})
+    fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
+      body:JSON.stringify({access_key:"6ef75f54-ade0-4e01-9610-0ddfd3aacef7",subject:"New message from verbeditorial.com",from_name:"verbeditorial.com",name:document.getElementById("cf-name").value,email:document.getElementById("cf-email").value,message:document.getElementById("cf-msg").value})})
+    .then(function(r){return r.json().then(function(j){if(!r.ok||j.success!==true)throw (j&&j.message)||0;});})
     .then(function(){form.hidden=true;document.getElementById("cf-ok").hidden=false;})
-    .catch(function(m){btn.disabled=false;note.innerHTML='Sorry, that didn\'t go through. Please email <a href="mailto:hello@verbeditorial.com">hello@verbeditorial.com</a>.';if(m)console.warn("FormSubmit:",m);if(m&&/activat/i.test(m))note.textContent="Almost there: this form is waiting to be activated. Check the hello@ inbox for the activation email.";});
+    .catch(function(m){btn.disabled=false;note.innerHTML='Sorry, that didn\'t go through. Please email <a href="mailto:hello@verbeditorial.com">hello@verbeditorial.com</a>.';if(m)console.warn("FormSubmit:",m);});
   });
 })();
 </script>
