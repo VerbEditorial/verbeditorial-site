@@ -163,8 +163,8 @@ canvas.wave{display:block;width:100%;height:26px;margin-top:4px}
 
 /* work */
 #work,#contact{overflow:hidden;isolation:isolate}
-.work-bg.contact-bg{inset:0;-webkit-mask-image:none;mask-image:none}
-.work-bg.contact-bg::after{background:rgba(10,10,10,.6)}
+.work-bg.contact-bg{inset:-10% 0;-webkit-mask-image:none;mask-image:none}
+.work-bg.contact-bg::after{inset:-6px;background:rgba(10,10,10,.6)}
 .work-bg.contact-bg video{filter:saturate(.75) brightness(1.44)}
 .work-bg{position:absolute;inset:-8% 0;z-index:-1;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,transparent 0,transparent 7%,#000 calc(7% + 320px));mask-image:linear-gradient(180deg,transparent 0,transparent 7%,#000 calc(7% + 320px))}
 .work-bg video{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.75)}
